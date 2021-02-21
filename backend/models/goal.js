@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Goal = new Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User'
+    },
     goal: {
         type: String,
         default: ''
@@ -13,6 +17,10 @@ const Goal = new Schema({
     category: {
         type: String,
         default: ''
+    },
+    private: {
+        type: Boolean,
+        default: false
     },
     date: {
         type: Date,
